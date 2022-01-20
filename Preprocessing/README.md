@@ -2,7 +2,7 @@
 
 Data was first extracted from the [IMDb database](https://datasets.imdbws.com/), then imported to MS SQL using Microsoft Visual Studio 2019, using the “Integration Services Project” template and the SSIS toolbox.  The data was imported as “RAW” and all columns as type of strings in order to avoid any kind of errors.
 
-Once the data was in MSSQL, new “working” tables were created in order to better adapt to the data. This was done by creating stored procedures (see [here](...https...)).
+Once the data was in MSSQL, new “working” tables were created in order to better fit the data type and specifications. This was done by creating stored procedures (see example [here](https://github.com/pcmaldonado/IMDb/blob/main/Preprocessing/name_basics_procedure_wrk_table.sql)).
 
 Finally, 
 
