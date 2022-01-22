@@ -1,17 +1,17 @@
 USE [imdb_202201]
 GO
-/****** Object:  Table [dbo].[known_titles_202201]    Script Date: 19/01/2022 19:13:41 ******/
+/****** Object:  Table [dbo].[known_titles_202201]    Script Date: 22/01/2022 11:41:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[known_titles_202201](
 	[RowNumber] [int] IDENTITY(1,1) NOT NULL,
-	[nconst_t] [varchar](10) NULL,
-	[knownForTitles] [varchar](10) NULL
+	[nconst_t] [varchar](10) NOT NULL,
+	[knownForTitles] [varchar](10) NOT NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[name_basics_202201]    Script Date: 19/01/2022 19:13:41 ******/
+/****** Object:  Table [dbo].[name_basics_202201]    Script Date: 22/01/2022 11:41:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -19,7 +19,7 @@ GO
 CREATE TABLE [dbo].[name_basics_202201](
 	[RowNumber] [int] IDENTITY(1,1) NOT NULL,
 	[nconst] [varchar](10) NOT NULL,
-	[primaryName] [nvarchar](100) NULL,
+	[primaryName] [nvarchar](100) NOT NULL,
 	[birthYear] [int] NULL,
 	[deathYear] [int] NULL,
  CONSTRAINT [nconst] PRIMARY KEY CLUSTERED 
@@ -28,25 +28,25 @@ CREATE TABLE [dbo].[name_basics_202201](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[professions_202201]    Script Date: 19/01/2022 19:13:41 ******/
+/****** Object:  Table [dbo].[professions_202201]    Script Date: 22/01/2022 11:41:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[professions_202201](
 	[RowNumber] [int] IDENTITY(1,1) NOT NULL,
-	[nconst_p] [varchar](10) NULL,
+	[nconst_p] [varchar](10) NOT NULL,
 	[profession] [varchar](100) NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[title_akas_202201]    Script Date: 19/01/2022 19:13:41 ******/
+/****** Object:  Table [dbo].[title_akas_202201]    Script Date: 22/01/2022 11:41:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[title_akas_202201](
 	[RowNumber] [int] IDENTITY(1,1) NOT NULL,
-	[titleId] [varchar](10) NULL,
+	[titleId] [varchar](10) NOT NULL,
 	[ordering] [int] NULL,
 	[title] [nvarchar](100) NULL,
 	[region] [varchar](5) NULL,
@@ -55,7 +55,7 @@ CREATE TABLE [dbo].[title_akas_202201](
 	[isOriginalTitle] [varchar](100) NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[title_basics_202201]    Script Date: 19/01/2022 19:13:41 ******/
+/****** Object:  Table [dbo].[title_basics_202201]    Script Date: 22/01/2022 11:41:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -74,20 +74,7 @@ CREATE TABLE [dbo].[title_basics_202201](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[title_principals_202201]    Script Date: 19/01/2022 19:13:41 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[title_principals_202201](
-	[RowNumber] [int] IDENTITY(1,1) NOT NULL,
-	[tconst] [varchar](10) NULL,
-	[ordering] [int] NULL,
-	[nconst] [varchar](10) NULL,
-	[category] [varchar](100) NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[title_ratings_202201]    Script Date: 19/01/2022 19:13:41 ******/
+/****** Object:  Table [dbo].[title_ratings_202201]    Script Date: 22/01/2022 11:41:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -99,14 +86,14 @@ CREATE TABLE [dbo].[title_ratings_202201](
 	[numVotes] [int] NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[titles_genres_202201]    Script Date: 19/01/2022 19:13:41 ******/
+/****** Object:  Table [dbo].[titles_genres_202201]    Script Date: 22/01/2022 11:41:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[titles_genres_202201](
 	[RowNumber] [int] IDENTITY(1,1) NOT NULL,
-	[tconst_g] [varchar](10) NULL,
+	[tconst_g] [varchar](10) NOT NULL,
 	[genres] [varchar](50) NULL
 ) ON [PRIMARY]
 GO
@@ -129,11 +116,6 @@ ALTER TABLE [dbo].[title_akas_202201]  WITH CHECK ADD  CONSTRAINT [titleId] FORE
 REFERENCES [dbo].[title_basics_202201] ([tconst])
 GO
 ALTER TABLE [dbo].[title_akas_202201] CHECK CONSTRAINT [titleId]
-GO
-ALTER TABLE [dbo].[title_principals_202201]  WITH CHECK ADD  CONSTRAINT [tconst_p] FOREIGN KEY([tconst])
-REFERENCES [dbo].[title_basics_202201] ([tconst])
-GO
-ALTER TABLE [dbo].[title_principals_202201] CHECK CONSTRAINT [tconst_p]
 GO
 ALTER TABLE [dbo].[title_ratings_202201]  WITH CHECK ADD  CONSTRAINT [tconst_r] FOREIGN KEY([tconst_r])
 REFERENCES [dbo].[title_basics_202201] ([tconst])
