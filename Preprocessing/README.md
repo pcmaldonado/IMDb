@@ -13,6 +13,6 @@ Finally,
 
 The final representation of the working tables can be visualized as:
 
-![Untitled](https://github.com/pcmaldonado/IMDb/blob/main/Preprocessing/FULL_EntityRelationshipSchema.png)
+![Untitled](https://github.com/pcmaldonado/IMDb/blob/main/Preprocessing/RelationalDatabaseSchema.png)
 
 *(Schema created with SqlDBM using a generated [script](https://github.com/pcmaldonado/IMDb/blob/main/Preprocessing/script.sql) from MSSQL)*
