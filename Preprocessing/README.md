@@ -1,4 +1,4 @@
-# ETL & Preprocessing
+# ETL & Preprocessing (SSIS, SQL)
 
 Data was first extracted from the [IMDb database](https://datasets.imdbws.com/), then imported to MS SQL using Microsoft Visual Studio 2019, using the “Integration Services Project” template and the SSIS toolbox.  The data was imported as “RAW” and all columns as type of strings in order to avoid any kind of errors.
 
