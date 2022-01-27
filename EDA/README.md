@@ -1,23 +1,35 @@
 # Exploratory Data Analysis (SQL, Python, Tableau)
+## About IMDb
+IMDb has two main sources of income: advertising & paid membership (IMDbPro) aimed at industry professionals ([source](https://help.imdb.com/article/imdb/general-information/how-much-does-using-imdb-cost/G47U365PP8GQVQYV?ref_=helpart_nav_38#)). This means that :
 
-IMDb has two main sources of income: advertising & paid membership (IMDbPro) “aimed at film industry professionals” ([source](https://help.imdb.com/article/imdb/general-information/how-much-does-using-imdb-cost/G47U365PP8GQVQYV?ref_=helpart_nav_38#)). This means that :
+- they must attract the general public (banner ads revenue)
+- they need to attract industry professionals (paid membership)
 
-- they need to attract general public, from which some will click on ad banners, thus generating revenue for IMDb
-- they need to attract industry professionals to suscribe to their paid membership
+<br>
 
+## Cast and crew (IMDb Pro target)
 In the available database we have more than 4,000,000 actors/actresses, almost 1 million different producers and hundred of thousands of writers, directors as well as people working in camera and sound departments, and many other professsions (legal, publicist, choreographer, set decorator, etc.). All of these people are potential suscribers of the IMDb membership.
 
-Some of the biggest productions (largest cast and crew in the IMDb available dataset) per title type since the year 2001 are the “Avengers: Endgame” (movie) with 3,421 people having worked on, and “Game of Thrones” (tvSeries) with 2,856 people. Having worked on a big production can help cast and crew members to show a quality portfolio of projects as well as increase their network, in other words, these people would specially benefit from having an IMDb membership !
+Some of the biggest productions (largest cast and crew in the IMDb available dataset) per title type since the year 2001 are the “Avengers: Endgame” (movie) with 3,421 people having worked on, and “Game of Thrones” (tvSeries) with 2,856 people. 
+
+Whether it's recruiters who could more easily find the right team for these types of productions or cast and crew members who have worked on these productions and could benefit from being able to show off their achievements, people who have worked on big production would specially benefit from having an IMDb membership !
 <br><br>
 
+<i>Also check the cast and crew that work on the best titles of 2021 (more than 100K votes and above 8.0 average rating) [here](https://public.tableau.com/app/profile/paula2733/viz/BestCrew2021_imdbdata/Dashboard1) on Tableau ! </i>
 
-Having a good rating system is important to attract more users, and thus increase ads revenue. Unfortunately, titles with lower number of votes are not well represented by their average rating:
+<br>
+
+## Best titles, Number of votes & Ratings
+Having a good rating system is important to attract more users, and thus increase ads revenue. For this, ratings should be representative and voters should be encourage to vote, specially for titles with very few votes. Indeed, titles with lower number of votes are not well represented by their average rating. 
+
+In the graph below, we can see that when the votes are very low, a title can have a score from 0 to 10. However, as the number of votes increases, the average rating also tends to go higher (although below 10).<br><br>
 
 ![numVotes_rating.png](https://github.com/pcmaldonado/IMDb/blob/main/EDA/numVotes_rating.png)
 
-We can see that when the votes are very low, a title can have a score from 0 to 10. However, as the number of votes increases, the average rating tends to go higher (but below 10).<br><br>
 
+<br>
 We can see what are the best titles in the available data, considering only titles with more than 50k votes:
+
 <details>
 <summary><b>Best titles per type in the IMDb dataset </b></summary>
 From the available data in the inner join of tables “title_basics” and “title_ratings”, and considering only titles with more than 50K votes, the best titles per title type are: <br><br>
@@ -450,13 +462,12 @@ From the available data, the best movies since the 2000s, by genre, are:  <br><b
 	</tr>
 </table>
 </details>
+
+
 <br>
 
-<i>And check the cast and crew that work on the best titles of 2021 (more than 100K votes and above 8.0 average rating) [here](https://public.tableau.com/app/profile/paula2733/viz/BestCrew2021_imdbdata/Dashboard1) on Tableau ! </i>
-
-
-<br><br>
-Finally, knowing the industry can be helpful. The genre that has developped the more in the last 20 years is the “Documentary” genre, going from 25,874 total titles in 2001 up to 107,812 in 2021 (i.e. 7.4% annual growth), and the second most growing genre is the “Short”, with 6.36% annual growth rate. Finally, the most common genres, “Drama” and “Comedy”, also continue growing.
+## Genres
+Finally, it can be helpful to know how the sector evolves. The genre that has grown the most over the past 20 years is the "Documentary" genre, from 25,874 total titles in 2001 to 107,812 in 2021 (a 7.4% annual growth rate), while the second fastest growing genre is the "Short Film" genre, with a 6.4% annual growth rate. Finally, the most common genres, "Drama" and "Comedy," also continue to grow, but at lower rates (~5% and 4.6% annual growth rates, respectively).
 
 ![tot_titles_genre_year.gif](https://github.com/pcmaldonado/IMDb/blob/main/EDA/tot_titles_genre_year.gif)
 
