@@ -4,10 +4,9 @@
 IMDb authorizes the use of subsets of its total database for non-commercial purposes. Seven dataset files are available (title.akas, title.basics, title.crew, title.episode, title.principals, title.ratings and name.basics) and each one contains different information about the millions of different titles and people available in the IMDb database (learn more [here](https://www.imdb.com/interfaces/)).
 
 ### Use of:
-* Python Version: 3.8.10 *(Packages: numpy, pandas, matplotlib, seaborn)*
 * Visual Studio 2019 - SSIS
 * Microsfot SQL Server
-* Tableau Public 2021.4
+* Power BI
 
 <br>
 
@@ -20,7 +19,7 @@ Some tables were discarded, and others were created to avoid having multiple val
 <br>
 
 ## [Exploratory Data Analyis](https://github.com/pcmaldonado/IMDb/tree/main/EDA) 
-<i>This analysis was done using MSSQL, Python and Tableau Public.</i>
+<i>This analysis was done using MSSQL and Power BI.</i>
 
 IMDb's revenue comes from both advertisers and its paying members (IMDbPro). 
 
@@ -30,4 +29,4 @@ IMDb's revenue comes from both advertisers and its paying members (IMDbPro).
 - IMDb
 	- Users of IMDb could also benefit from having a robust rating system. Indeed, as of now, titles with a high number of votes tend to have higher ratings, which makes the average title rating at relatively high 6.62 --moreover, titles with fewer than 10 votes get an average rating above average, at around 7.05.	
 
-See more informations about the IMDb datasets [here](https://github.com/pcmaldonado/IMDb/tree/main/EDA) (best titles per title type, best series from the 90's, and more!)
+See more informations about the IMDb datasets on this [here](https://github.com/pcmaldonado/IMDb/tree/main/EDA) (best titles per title type, best series from the 90's, and more!)

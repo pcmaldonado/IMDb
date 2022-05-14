@@ -1,4 +1,4 @@
-# Exploratory Data Analysis (SQL, Python, Tableau)
+# Exploratory Data Analysis (MSSQL, PowerBI)
 ## About IMDb
 IMDb has two main sources of income: advertising & paid membership (IMDbPro) aimed at industry professionals ([source](https://help.imdb.com/article/imdb/general-information/how-much-does-using-imdb-cost/G47U365PP8GQVQYV?ref_=helpart_nav_38#)). This means that :
 
@@ -15,16 +15,14 @@ Some of the biggest productions (largest cast and crew in the IMDb available dat
 Whether it's recruiters who could more easily find the right team for these types of productions or cast and crew members who have worked on these productions and could benefit from being able to show off their achievements, people who have worked on big production would specially benefit from having an IMDb membership !
 <br><br>
 
-<i>Also check the cast and crew that work on the best titles of 2021 (more than 100K votes and above 8.0 average rating) [here](https://public.tableau.com/app/profile/paula2733/viz/BestCrew2021_imdbdata/Dashboard1) on Tableau ! </i>
 
 <br>
 
 ## Best titles, Number of votes & Ratings
 Having a good rating system is important to attract more users, and thus increase ads revenue. For this, ratings should be representative and voters should be encourage to vote, specially for titles with very few votes. Indeed, titles with lower number of votes are not well represented by their average rating. 
 
-In the graph below, we can see that when the votes are very low, a title can have a score from 0 to 10. However, as the number of votes increases, the average rating also tends to go higher (although below 10).<br><br>
+In the [dashboard](https://app.powerbi.com/view?r=eyJrIjoiNThiNDgwZTQtZTExOS00OTE3LThlYzUtNDYxMjIzNDA3ZTMwIiwidCI6ImI4MDhjYjg5LTI5MjItNDgxMC1hNzRjLWNmYzU4NzBjODlhOSJ9&pageName=ReportSection), we can see that when the votes are very low, a title can have a score from 0 to 10. However, as the number of votes increases, the average rating also tends to go higher (although below 10).<br><br>
 
-![numVotes_rating.png](https://github.com/pcmaldonado/IMDb/blob/main/EDA/numVotes_rating.png)
 
 
 <br>
@@ -469,6 +467,3 @@ From the available data, the best movies since the 2000s, by genre, are:  <br><b
 ## Genres
 Finally, it can be helpful to know how the sector evolves. The genre that has grown the most over the past 20 years is the "Documentary" genre, from 25,874 total titles in 2001 to 107,812 in 2021 (a 7.4% annual growth rate), while the second fastest growing genre is the "Short Film" genre, with a 6.4% annual growth rate. Finally, the most common genres, "Drama" and "Comedy," also continue to grow, but at lower rates (~5% and 4.6% annual growth rates, respectively).
 
-![tot_titles_genre_year.gif](https://github.com/pcmaldonado/IMDb/blob/main/EDA/tot_titles_genre_year.gif)
-
-<i>Also you can check the evolution of genres preference by country through time [here](https://public.tableau.com/app/profile/paula2733/viz/TopGenreCountryYear/Sheet1) on Tableau Public ! </i>
