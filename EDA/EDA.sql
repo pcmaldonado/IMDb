@@ -135,11 +135,10 @@ ORDER BY knownTitles DESC, profession, primaryName;
 
 
 -- ==========================================================================
--- ------------------ Exporting DATA for further analysis -------------------
+-- ------------------ DATA for further analysis -------------------
 -- ==========================================================================
 -- Titles
-CREATE VIEW IMDb_titles AS 
-SELECT tconst, titleType, startYear, primaryTitle,  --(6,431,723 rows)
+SELECT tconst, titleType, startYear, primaryTitle,  
 		region, genres, averageRating, numVotes
 FROM title_basics_202201 tb
 JOIN title_ratings_202201 r
@@ -149,3 +148,4 @@ JOIN title_akas_202201 a
 JOIN titles_genres_202201 g
 	ON g.tconst_g = tb.tconst
 WHERE region <> '\N' AND genres <> '\N';
+--(6,431,723 rows)
